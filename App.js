@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
-import "./styles.css"; // dodajemo eksterni stil
+import "./styles.css"; // ← OVDE JE VAŽAN IMPORT
 
 const CUSTOMERS = [
   "Dolly Bell", "Galerija", "Terassa", "Petica", "Sava Centar", "Dvojka",
@@ -13,7 +13,7 @@ const UNITS = ["KG", "KOM", "VEZA"];
 const COMPANY = {
   name: "Vocno zvono",
   pib: "113856697",
-  address: "BULEVAR MIHAJLA PUPINA 165B, 11070, Beograd",
+  address: "Bul. Mihajla Pupina 165B, 11070, Beograd",
   racun: "160-6000002183930-27"
 };
 
@@ -67,7 +67,7 @@ function App() {
   return (
     <div className="container">
       <h2>Otpremnica</h2>
-      
+
       <label>Kupac</label>
       <select value={customer} onChange={e => setCustomer(e.target.value)}>
         {CUSTOMERS.map(c => (
